@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { isAuthenticated } from '../../models/User';
 import { routes } from '../constants';
 import { withPrivateTemplate } from '../../helpers/template';
@@ -9,12 +9,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
   return (
     <Route 
-      { ...rest } 
+      { ...rest }
       render={props => (
         authenticated ? (
           withPrivateTemplate(<Component { ...props} />)
         ) : (
-          <Redirect to={{ pathname: routes.LOGIN, state: { from: props.location } }} /> 
+          window.location = routes.LOGIN
         )
       )} 
     />

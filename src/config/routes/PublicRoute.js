@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { isAuthenticated } from '../../models/User';
 import { routes } from '../constants';
 import { withPublicTemplate } from '../../helpers/template';
@@ -12,7 +12,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
       { ...rest } 
       render={props => (
         authenticated ? (
-          <Redirect to={{ pathname: routes.TIME_LINE, state: { from: props.location } }} /> 
+          window.location = routes.TIME_LINE
         ) : (
           withPublicTemplate(<Component { ...props} />)
         )

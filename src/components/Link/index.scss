@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.Link {
+  color: inherit;
+  font-family: $main-font;
+  transition: $transition;
+  opacity: 0.5;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
+}
