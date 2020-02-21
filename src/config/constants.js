@@ -8,5 +8,6 @@ export const apiUrl = process.env.URL_API || 'https://realworld-api-edumoreira15
 
 export const routes = {
   TIME_LINE: `${baseUrl}/`,
-  LOGIN: `${baseUrl}/login`
+  LOGIN: `${baseUrl}/login`,
+  REGISTER: `${baseUrl}/register`
 }

@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.Button {
+  padding: 4px 10px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: solid 1px $black;
+  font-family: $main-font;
+  font-weight: 100;
+  background: $white;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}

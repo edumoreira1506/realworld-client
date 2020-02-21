@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../../components/Header';
+import { routes } from '../../config/constants';
 
 import './index.scss';
 
 const headerLinks = [
   {
     content: 'Register',
-    to: '/register'
+    to: routes.REGISTER
   }
 ];
 
