@@ -4,11 +4,23 @@ import Link from '../../components/Link';
 import Form from '../../components/Form';
 import { routes } from '../../config/constants';
 
+import * as User from '../../models/User';
+import * as Alert from '../../helpers/alert';
+
 import './index.scss'
 
 const Login = () => {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    User.login(email, password, {
+      onAuthenticated: User.authenticate,
+      onError: Alert.error
+    });
+  }
 
   const inputs = [
     {
@@ -42,7 +54,7 @@ const Login = () => {
         </h3>
         <div className="Login__form">
           <Form
-            onSubmit={() => alert('enviando!')}
+            onSubmit={onSubmit}
             buttonText="Sign in"
             inputs={inputs}
           />

@@ -8,9 +8,10 @@ import TimeLine from '../../pages/TimeLine';
 
 const Routes = () => (
   <HashRouter>
-    <PrivateRoute exact path='/' component={TimeLine} />
+    <PrivateRoute exact path='/time_line' component={TimeLine} />
     
     <PublicRoute exact path='/login' component={Login} />
+    <PublicRoute exact path='/' component={Login} />
   </HashRouter>
 );
 
