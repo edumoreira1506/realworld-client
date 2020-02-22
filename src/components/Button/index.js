@@ -7,7 +7,12 @@ const Button = ({
   onClick,
   children
 }) => (
-  <button type={type} onClick={onClick} className="Button">
+  <button
+    type={type}
+    data-testid="button"
+    onClick={onClick}
+    className="Button"
+  >
     { children }
   </button>
 );

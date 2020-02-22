@@ -5,7 +5,7 @@ import Button from '../Button';
 import './index.scss';
 
 const Form = ({ inputs, buttonText, onSubmit }) => (
-  <form className="Form" onSubmit={onSubmit}>
+  <form className="Form" onSubmit={onSubmit} data-testid="form">
     {
       inputs.map(input =>
         <div className="Form__field" key={input.name}>
