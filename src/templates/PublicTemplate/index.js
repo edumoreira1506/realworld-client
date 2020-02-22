@@ -8,6 +8,10 @@ const headerLinks = [
   {
     content: 'Register',
     to: routes.REGISTER
+  },
+  {
+    content: 'Login',
+    to: routes.LOGIN
   }
 ];
 
