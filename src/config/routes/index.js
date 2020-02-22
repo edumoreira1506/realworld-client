@@ -5,6 +5,7 @@ import PublicRoute from './PublicRoute';
 
 import Login from '../../pages/Login';
 import TimeLine from '../../pages/TimeLine';
+import Register from '../../pages/Register';
 
 const Routes = () => (
   <HashRouter>
@@ -12,6 +13,7 @@ const Routes = () => (
     
     <PublicRoute exact path='/login' component={Login} />
     <PublicRoute exact path='/' component={Login} />
+    <PublicRoute exact path='/register' component={Register} />
   </HashRouter>
 );
 

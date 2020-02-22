@@ -7,3 +7,9 @@ export const login = async (email, password) => {
 
   return data;
 }
+
+export const register = async (user) => {
+  const { data } = await api.post('user', user);
+
+  return data;
+}
