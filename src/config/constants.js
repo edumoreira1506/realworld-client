@@ -1,8 +1,13 @@
-import 'dotenv';
+require('dotenv').config();
 
-export const apiUrl = process.env.URL_API || 'https://realworld-api-edumoreira1506.herokuapp.com/';
+const baseUrl = process.env.NODE_ENV === 'production'
+  ? 'https://edumoreira1506.github.io/realworld-client/#'
+  : 'http://localhost:3000/realworld-client/#';
+
+export const apiUrl = process.env.REACT_APP_URL_API || 'https://realworld-api-edumoreira1506.herokuapp.com/';
 
 export const routes = {
-  TIME_LINE: '/',
-  LOGIN: '/login'
+  TIME_LINE: `${baseUrl}/time_line`,
+  LOGIN: `${baseUrl}/login`,
+  REGISTER: `${baseUrl}/register`
 }

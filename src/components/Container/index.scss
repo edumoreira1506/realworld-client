@@ -1,0 +1,8 @@
+@import "../../variables.scss";
+
+.Container {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
