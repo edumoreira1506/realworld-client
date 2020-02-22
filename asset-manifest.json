@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/realworld-client/static/js/main.2241718f.chunk.js",
-    "main.js.map": "/realworld-client/static/js/main.2241718f.chunk.js.map",
+    "main.js": "/realworld-client/static/js/main.ae1264dc.chunk.js",
+    "main.js.map": "/realworld-client/static/js/main.ae1264dc.chunk.js.map",
     "runtime-main.js": "/realworld-client/static/js/runtime-main.f001944e.js",
     "runtime-main.js.map": "/realworld-client/static/js/runtime-main.f001944e.js.map",
-    "static/js/2.a4c25fed.chunk.js": "/realworld-client/static/js/2.a4c25fed.chunk.js",
-    "static/js/2.a4c25fed.chunk.js.map": "/realworld-client/static/js/2.a4c25fed.chunk.js.map",
+    "static/js/2.de4e8398.chunk.js": "/realworld-client/static/js/2.de4e8398.chunk.js",
+    "static/js/2.de4e8398.chunk.js.map": "/realworld-client/static/js/2.de4e8398.chunk.js.map",
     "index.html": "/realworld-client/index.html",
-    "precache-manifest.46c70f7bf3c83336369632b66e69a474.js": "/realworld-client/precache-manifest.46c70f7bf3c83336369632b66e69a474.js",
+    "precache-manifest.548f6e946f22859e0fe9790f07375518.js": "/realworld-client/precache-manifest.548f6e946f22859e0fe9790f07375518.js",
     "service-worker.js": "/realworld-client/service-worker.js",
-    "static/js/2.a4c25fed.chunk.js.LICENSE.txt": "/realworld-client/static/js/2.a4c25fed.chunk.js.LICENSE.txt"
+    "static/js/2.de4e8398.chunk.js.LICENSE.txt": "/realworld-client/static/js/2.de4e8398.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f001944e.js",
-    "static/js/2.a4c25fed.chunk.js",
-    "static/js/main.2241718f.chunk.js"
+    "static/js/2.de4e8398.chunk.js",
+    "static/js/main.ae1264dc.chunk.js"
   ]
 }
