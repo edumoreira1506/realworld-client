@@ -9,5 +9,6 @@ export const apiUrl = process.env.REACT_APP_URL_API || 'https://realworld-api-ed
 export const routes = {
   TIME_LINE: `${baseUrl}/time_line`,
   LOGIN: `${baseUrl}/login`,
-  REGISTER: `${baseUrl}/register`
+  REGISTER: `${baseUrl}/register`,
+  EDIT: `${baseUrl}/edit_profile`
 }

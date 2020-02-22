@@ -4,10 +4,15 @@ export const isAuthenticated = () => Boolean(getToken());
 
 const getToken = () => window.localStorage.getItem('token');
 
+const getId = () => window.localStorage.getItem('id');
+
 const setToken = token => window.localStorage.setItem('token', token);
+
+const setId = id => window.localStorage.setItem('id', id);
 
 export const authenticate = user => {
   setToken(user.token);
+  setId(user._id);
 
   window.location.reload();
 }
