@@ -9,6 +9,10 @@ const headerLinks = [
     content: 'Edit',
     to: routes.EDIT
   },
+  {
+    content: 'Logout',
+    to: routes.LOGOUT
+  }
 ];
 
 const PrivateTemplate = ({ children }) => (

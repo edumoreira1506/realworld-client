@@ -27,6 +27,11 @@ export const login = async (email, password, callback) => {
   return callback.onError(apiResponse.message)
 }
 
+export const logout = () => {
+  window.localStorage.clear();
+  window.location.reload();
+}
+
 export const register = async (user, callback) => {
   const apiResponse = await UserService.register(user);
 

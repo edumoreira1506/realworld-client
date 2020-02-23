@@ -11,5 +11,6 @@ export const routes = {
   LOGIN: `${baseUrl}/login`,
   REGISTER: `${baseUrl}/register`,
   EDIT: `${baseUrl}/edit_profile`,
-  EDIT_PASSWORD: `${baseUrl}/edit_password`
+  EDIT_PASSWORD: `${baseUrl}/edit_password`,
+  LOGOUT: `${baseUrl}/logout`
 }

@@ -8,12 +8,14 @@ import TimeLine from '../../pages/TimeLine';
 import Register from '../../pages/Register';
 import EditProfile from '../../pages/EditProfile';
 import EditPassword from '../../pages/EditPassword';
+import Logout from '../../pages/Logout';
 
 const Routes = () => (
   <HashRouter>
     <PrivateRoute exact path='/time_line' component={TimeLine} />
     <PrivateRoute exact path='/edit_profile' component={EditProfile} />
     <PrivateRoute exact path='/edit_password' component={EditPassword} />
+    <PrivateRoute exact path='/logout' component={Logout} />
     
     <PublicRoute exact path='/login' component={Login} />
     <PublicRoute exact path='/' component={Login} />
