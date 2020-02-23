@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/realworld-client/static/css/main.a20f3216.chunk.css",
-    "main.js": "/realworld-client/static/js/main.78a65021.chunk.js",
-    "main.js.map": "/realworld-client/static/js/main.78a65021.chunk.js.map",
+    "main.js": "/realworld-client/static/js/main.2e1a1113.chunk.js",
+    "main.js.map": "/realworld-client/static/js/main.2e1a1113.chunk.js.map",
     "runtime-main.js": "/realworld-client/static/js/runtime-main.f001944e.js",
     "runtime-main.js.map": "/realworld-client/static/js/runtime-main.f001944e.js.map",
-    "static/js/2.56d957bd.chunk.js": "/realworld-client/static/js/2.56d957bd.chunk.js",
-    "static/js/2.56d957bd.chunk.js.map": "/realworld-client/static/js/2.56d957bd.chunk.js.map",
+    "static/js/2.5e2e6905.chunk.js": "/realworld-client/static/js/2.5e2e6905.chunk.js",
+    "static/js/2.5e2e6905.chunk.js.map": "/realworld-client/static/js/2.5e2e6905.chunk.js.map",
     "index.html": "/realworld-client/index.html",
-    "precache-manifest.6c63f278e179817c89065a935ae0cfa7.js": "/realworld-client/precache-manifest.6c63f278e179817c89065a935ae0cfa7.js",
+    "precache-manifest.be1ad74a4085d0abbb4ad1851385cc30.js": "/realworld-client/precache-manifest.be1ad74a4085d0abbb4ad1851385cc30.js",
     "service-worker.js": "/realworld-client/service-worker.js",
     "static/css/main.a20f3216.chunk.css.map": "/realworld-client/static/css/main.a20f3216.chunk.css.map",
-    "static/js/2.56d957bd.chunk.js.LICENSE.txt": "/realworld-client/static/js/2.56d957bd.chunk.js.LICENSE.txt"
+    "static/js/2.5e2e6905.chunk.js.LICENSE.txt": "/realworld-client/static/js/2.5e2e6905.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f001944e.js",
-    "static/js/2.56d957bd.chunk.js",
+    "static/js/2.5e2e6905.chunk.js",
     "static/css/main.a20f3216.chunk.css",
-    "static/js/main.78a65021.chunk.js"
+    "static/js/main.2e1a1113.chunk.js"
   ]
 }
