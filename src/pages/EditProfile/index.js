@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Form from '../../components/Form';
 import Box from '../../components/Box';
+import Link from '../../components/Link';
 import * as User from '../../models/User';
 import * as Alert from '../../helpers/alert';
+import { routes } from '../../config/constants';
 
 import './index.scss';
 
@@ -72,6 +74,11 @@ const EditProfile = () => {
         <h2 className="EditProfile__title">
           Edit Profile
         </h2>
+        <h3 className="EditProfile__edit-password">
+          <Link to={routes.EDIT_PASSWORD} target="_self">
+            Edit password
+          </Link>
+        </h3>
         <div className="EditProfile__areas">
           <Form
             onSubmit={onSubmit}

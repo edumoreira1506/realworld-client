@@ -10,5 +10,6 @@ export const routes = {
   TIME_LINE: `${baseUrl}/time_line`,
   LOGIN: `${baseUrl}/login`,
   REGISTER: `${baseUrl}/register`,
-  EDIT: `${baseUrl}/edit_profile`
+  EDIT: `${baseUrl}/edit_profile`,
+  EDIT_PASSWORD: `${baseUrl}/edit_password`
 }

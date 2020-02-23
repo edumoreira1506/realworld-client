@@ -1,6 +1,6 @@
 @import "../../variables.scss";
 
-.EditProfile {
+.EditPassword {
   width: 50vw;
   height: 55vh;
   background: $silver;
@@ -9,8 +9,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
-  padding: 5px;
 
   &__title {
     font-family: $main-font;
@@ -18,34 +16,18 @@
     letter-spacing: 15px;
     font-size: 30px;
     color: $black;
-    padding-top: 15px;
     margin: 0;
   }
 
-  &__edit-password {
-    margin: 0;
-    font-style: italic;
-    font-weight: 100;
-  }
-
-  &__areas {
+  &__form {
+    margin: 30px 0;
     width: 80%;
     height: auto;
+    border: solid 1px $white;
+    border-radius: $border-radius;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  &__image-container {
-    max-width: 145px;
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__image {
-    width: 100%;
-    height: auto;
-    border-radius: 100%;
   }
 }
