@@ -20,6 +20,17 @@ export const find = async (userId) => {
   return data;
 }
 
+export const follow = async (userId, token) => {
+  const config = {
+    headers: {
+      'Authorization': token
+    }
+  };
+  const { data } = await api.post(`user/${userId}/follow`, {}, config);
+
+  return data;
+}
+
 export const edit = async (user, userId, token) => {
   const config = {
     headers: {

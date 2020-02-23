@@ -1,10 +1,14 @@
 import React from 'react';
 import Link from '../Link';
 import Container from '../Container';
+import * as User from '../../models/User';
+import { privateLinks, publicLinks } from '../../config/constants';
 
 import './index.scss';
 
-const Header = ({ links }) => (
+const links = User.isAuthenticated() ? privateLinks : publicLinks;
+
+const Header = () => (
   <header className="Header">
     <Container>
       <div className="Header__areas">

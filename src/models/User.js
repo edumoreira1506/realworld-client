@@ -6,13 +6,18 @@ const getToken = () => window.localStorage.getItem('token');
 
 export const getId = () => window.localStorage.getItem('id');
 
+export const getUsername = () => window.localStorage.getItem('username');
+
 const setToken = token => window.localStorage.setItem('token', token);
+
+const setUsername = username => window.localStorage.setItem('username', username);
 
 const setId = id => window.localStorage.setItem('id', id);
 
 export const authenticate = user => {
   setToken(user.token);
   setId(user._id);
+  setUsername(user.username);
 
   window.location.reload();
 }
@@ -47,6 +52,17 @@ export const find = async (userId, callback) => {
 
   if (apiResponse.ok) {
     return callback.onFound(apiResponse.user);
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
+export const follow = async (userId, callback) => {
+  const token = getToken() || '';
+  const apiResponse = await UserService.follow(userId, token);
+
+  if (apiResponse.ok) {
+    return callback.onFollowed(apiResponse.message);
   }
 
   return callback.onError(apiResponse.message);
