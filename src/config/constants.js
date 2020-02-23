@@ -12,13 +12,18 @@ export const routes = {
   REGISTER: `${baseUrl}/register`,
   EDIT: `${baseUrl}/edit_profile`,
   EDIT_PASSWORD: `${baseUrl}/edit_password`,
-  LOGOUT: `${baseUrl}/logout`
+  LOGOUT: `${baseUrl}/logout`,
+  MY_PROFILE: `${baseUrl}/user/${window.localStorage.getItem('username')}`
 }
 
 export const privateLinks = [
   {
     content: 'Edit',
     to: routes.EDIT
+  },
+  {
+    content: 'Profile',
+    to: routes.MY_PROFILE
   },
   {
     content: 'Logout',
