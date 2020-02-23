@@ -4,7 +4,7 @@ export const isAuthenticated = () => Boolean(getToken());
 
 const getToken = () => window.localStorage.getItem('token');
 
-const getId = () => window.localStorage.getItem('id');
+export const getId = () => window.localStorage.getItem('id');
 
 const setToken = token => window.localStorage.setItem('token', token);
 
@@ -32,6 +32,28 @@ export const register = async (user, callback) => {
 
   if (apiResponse.ok) {
     return callback.onRegistered();
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
+export const find = async (userId, callback) => {
+  const apiResponse = await UserService.find(userId);
+
+  if (apiResponse.ok) {
+    return callback.onFound(apiResponse.user);
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
+export const edit = async (user, callback) => {
+  const token = getToken();
+  const userId = getId();
+  const apiResponse = await UserService.edit(user, userId, token);
+
+  if (apiResponse.ok) {
+    return callback.onEdited();
   }
 
   return callback.onError(apiResponse.message);
