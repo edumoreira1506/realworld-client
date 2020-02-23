@@ -1,8 +1,60 @@
+@import "../../variables.scss";
+
 .User {
   width: 100%;
   height: auto;
 
   &__header {
     height: 8vh;
+  }
+
+  &__banner {
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+  }
+
+  &__left-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    padding-right: 15px;
+    border-right: solid 5px $white;
+  }
+
+  &__name {
+    color: $white;
+    margin: 0;
+    font-family: $main-font;
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  &__image-container {
+    margin: 0;
+    max-width: 150px;
+    height: auto;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__bio {
+    margin: 0;
+    font-size: 20px;
+    padding-left: 15px;
+    font-weight: 700;
+    font-family: $main-font;
+  }
+
+  &__follow-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }

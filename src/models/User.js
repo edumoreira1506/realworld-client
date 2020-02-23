@@ -52,6 +52,17 @@ export const find = async (userId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
+export const follow = async (userId, callback) => {
+  const token = getToken() || '';
+  const apiResponse = await UserService.follow(userId, token);
+
+  if (apiResponse.ok) {
+    return callback.onFollowed(apiResponse.message);
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
 export const edit = async (user, callback) => {
   const token = getToken();
   const userId = getId();
