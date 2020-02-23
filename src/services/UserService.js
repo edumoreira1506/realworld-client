@@ -13,3 +13,20 @@ export const register = async (user) => {
 
   return data;
 }
+
+export const find = async (userId) => {
+  const { data } = await api.get(`user/${userId}`);
+
+  return data;
+}
+
+export const edit = async (user, userId, token) => {
+  const config = {
+    headers: {
+      'Authorization': token
+    }
+  };
+  const { data } = await api.patch(`user/${userId}`, user, config);
+
+  return data;
+}
