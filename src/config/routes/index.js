@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -9,6 +9,7 @@ import Register from '../../pages/Register';
 import EditProfile from '../../pages/EditProfile';
 import EditPassword from '../../pages/EditPassword';
 import Logout from '../../pages/Logout';
+import User from '../../pages/User';
 
 const Routes = () => (
   <HashRouter>
@@ -20,6 +21,8 @@ const Routes = () => (
     <PublicRoute exact path='/login' component={Login} />
     <PublicRoute exact path='/' component={Login} />
     <PublicRoute exact path='/register' component={Register} />
+
+    <Route exact path="/user/:username" component={User} />
   </HashRouter>
 );
 

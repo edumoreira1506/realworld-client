@@ -14,3 +14,25 @@ export const routes = {
   EDIT_PASSWORD: `${baseUrl}/edit_password`,
   LOGOUT: `${baseUrl}/logout`
 }
+
+export const privateLinks = [
+  {
+    content: 'Edit',
+    to: routes.EDIT
+  },
+  {
+    content: 'Logout',
+    to: routes.LOGOUT
+  }
+];
+
+export const publicLinks = [
+  {
+    content: 'Register',
+    to: routes.REGISTER
+  },
+  {
+    content: 'Login',
+    to: routes.LOGIN
+  }
+];
