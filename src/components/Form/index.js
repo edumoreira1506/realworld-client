@@ -1,10 +1,11 @@
 import React from 'react';
 import Input from '../Input';
+import TextArea from '../TextArea';
 import Button from '../Button';
 
 import './index.scss';
 
-const Form = ({ inputs, buttonText, onSubmit }) => (
+const Form = ({ inputs = [], buttonText, onSubmit, textAreas = [] }) => (
   <form className="Form" onSubmit={onSubmit} data-testid="form">
     {
       inputs.map(input =>
@@ -16,6 +17,19 @@ const Form = ({ inputs, buttonText, onSubmit }) => (
             onChange={input.onChange}
             required={input.required}
             name={input.name}
+          />
+        </div>
+      )
+    }
+    {
+      textAreas.map(textArea =>
+        <div className="Form__field" key={textArea.name}>
+          <TextArea
+            value={textArea.value}
+            placeholder={textArea.placeholder}
+            onChange={textArea.onChange}
+            required={textArea.required}
+            name={textArea.name}
           />
         </div>
       )

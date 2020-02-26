@@ -68,6 +68,15 @@ const EditProfile = () => {
     }
   ];
 
+  const textAreas = [
+    {
+      onChange: e => setBio(e.target.value),
+      required: true,
+      placeholder: 'Bio',
+      value: bio
+    }
+  ];
+
   return (
     <Box>
       <div className="EditProfile">
@@ -84,6 +93,7 @@ const EditProfile = () => {
             onSubmit={onSubmit}
             buttonText="EditP rofile"
             inputs={inputs}
+            textAreas={textAreas}
           />
           <figure className="EditProfile__image-container">
             <img src={image} className="EditProfile__image" alt={username} />

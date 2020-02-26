@@ -3,14 +3,17 @@ import Header from '../../components/Header';
 import Container from '../../components/Container';
 import Banner from '../../components/Banner';
 import Button from '../../components/Button';
+import Posts from '../../components/Posts';
 import * as Alert from '../../helpers/alert';
-import { find, follow } from '../../models/User';
+import { find, follow, getPosts } from '../../models/User';
+import { addUserImage, favorite } from '../../models/Post';
 import { useParams } from 'react-router-dom';
 
 import './index.scss';
 
 const User = () => {
   const [ user, setUser ] = useState({});
+  const [ posts, setPosts ] = useState([]);
   const { username } = useParams();
 
   useEffect(() => {
@@ -18,13 +21,29 @@ const User = () => {
       onError: Alert.error,
       onFound: setUser
     });
-  }, [username]);
+
+    getPosts(username, {
+      onError: Alert.error,
+      onFound: posts => {
+        const postsWithUser = posts.map(post => addUserImage(post, user.image));
+
+        setPosts(postsWithUser);
+      }
+    });
+  }, [username, user.image]);
 
   const followUser = () => {
     follow(user.id, {
       onFollowed: Alert.success,
       onError: Alert.error
     });
+  }
+
+  const onFavorite = postId => {
+    favorite(postId, {
+      onError: Alert.error,
+      onFavorited: () => Alert.success('Favorited!')
+    })
   }
 
   return (
@@ -55,6 +74,9 @@ const User = () => {
                 Follow +
               </Button>
             </span>
+          </div>
+          <div className="User__posts">
+            <Posts posts={posts} onFavorite={onFavorite} />
           </div>
         </Container>
       </Banner>

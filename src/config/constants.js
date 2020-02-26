@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const baseUrl = process.env.NODE_ENV === 'production'
+export const baseUrl = process.env.NODE_ENV === 'production'
   ? 'https://edumoreira1506.github.io/realworld-client/#'
   : 'http://localhost:3000/realworld-client/#';
 
