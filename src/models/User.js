@@ -2,7 +2,7 @@ import * as UserService from '../services/UserService';
 
 export const isAuthenticated = () => Boolean(getToken());
 
-const getToken = () => window.localStorage.getItem('token');
+export const getToken = () => window.localStorage.getItem('token');
 
 export const getId = () => window.localStorage.getItem('id');
 

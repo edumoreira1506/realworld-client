@@ -5,7 +5,7 @@ import Button from '../Button';
 
 import './index.scss';
 
-const Form = ({ inputs, buttonText, onSubmit, textAreas }) => (
+const Form = ({ inputs = [], buttonText, onSubmit, textAreas = [] }) => (
   <form className="Form" onSubmit={onSubmit} data-testid="form">
     {
       inputs.map(input =>
