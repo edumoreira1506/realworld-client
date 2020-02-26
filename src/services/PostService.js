@@ -21,3 +21,10 @@ export const favorite = async (postId, token) => {
 
   return data;
 }
+
+
+export const find = async (postId) => {
+  const { data } = await api.get(`post/${postId}`);
+
+  return data;
+}

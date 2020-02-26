@@ -20,9 +20,11 @@ const Header = () => (
         <nav className="Header__links">
           {
             links.map(link =>
-              <Link to={link.to} key={link.to} target="_self">
-                { link.content }
-              </Link>
+              <span className="Header__link" key={link.to}>
+                <Link to={link.to} target="_self">
+                  { link.content }
+                </Link>
+              </span>
             )
           }
         </nav>
