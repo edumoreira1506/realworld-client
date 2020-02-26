@@ -14,6 +14,7 @@ const Posts = ({ posts, onFavorite }) => (
           favoritesAmount={post.favorites.length}
           createdAt={post.createdAt}
           user={post.user}
+          id={post._id}
           onFavorite={() => onFavorite(post._id)}
         />
       )

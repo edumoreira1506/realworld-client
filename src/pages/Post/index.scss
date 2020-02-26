@@ -1,0 +1,62 @@
+@import "../../variables.scss";
+
+.PostPage {
+  width: 100%;
+  height: auto;
+
+  &__header {
+    height: 8vh;
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    font-family: $main-font;
+  }
+
+  &__title {
+    color: $white;
+    margin: 0 0 20px 0;
+    font-size: 40px;
+  }
+
+  &__details {
+    display: flex;
+  }
+
+  &__image-container {
+    margin: 8px 15px 0 0;
+    width: 45px;
+    height: auto;
+  }
+
+  &__image {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &__username, &__created-at {
+    margin: 0;
+    font-size: 15px;
+    color: $white;
+  }
+
+  &__user-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__content {
+    font-family: $main-font;
+    margin: 35px 0;
+    padding-bottom: 35px;
+    border-bottom: solid 1px $silver;
+  }
+}

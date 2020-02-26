@@ -10,6 +10,7 @@ import EditProfile from '../../pages/EditProfile';
 import EditPassword from '../../pages/EditPassword';
 import Logout from '../../pages/Logout';
 import User from '../../pages/User';
+import Post from '../../pages/Post';
 
 const Routes = () => (
   <HashRouter>
@@ -23,6 +24,7 @@ const Routes = () => (
     <PublicRoute exact path='/register' component={Register} />
 
     <Route exact path="/user/:username" component={User} />
+    <Route exact path="/post/:postId" component={Post} />
   </HashRouter>
 );
 

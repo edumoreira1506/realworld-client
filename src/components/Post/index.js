@@ -12,7 +12,8 @@ const Post = ({
   content,
   favoritesAmount,
   onFavorite,
-  user
+  user,
+  id
 }) => (
   <article className="Post">
     <div className="Post__header">
@@ -33,11 +34,13 @@ const Post = ({
         </h4>
       </div>
     </div>
-    <div className="Post__content">
-      <Markdown>
-        { content }
-      </Markdown>
-    </div>
+    <Link target="_self" to={`${baseUrl}/post/${id}`}>
+      <div className="Post__content">
+        <Markdown>
+          { content }
+        </Markdown>
+      </div>
+    </Link>
     <div className="Post__favorites">
       <FavoriteButton
         onClick={onFavorite}

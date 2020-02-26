@@ -78,11 +78,11 @@ const User = () => {
               </Button>
             </span>
           </div>
-          <div className="User__posts">
-            <Posts posts={posts} onFavorite={onFavorite} />
-          </div>
         </Container>
       </Banner>
+      <div className="User__posts">
+        <Posts posts={posts} onFavorite={onFavorite} />
+      </div>
     </div>
   );
 }

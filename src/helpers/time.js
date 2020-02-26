@@ -6,4 +6,4 @@ export const formatFromArray = array => array.map(item => ({
   updatedAt: format(item.updatedAt)
 }));
 
-const format = originalDate => moment(originalDate).calendar();
+export const format = originalDate => moment(originalDate).calendar();
