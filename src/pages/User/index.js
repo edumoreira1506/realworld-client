@@ -6,7 +6,7 @@ import Button from '../../components/Button';
 import Posts from '../../components/Posts';
 import * as Alert from '../../helpers/alert';
 import { find, follow, getPosts } from '../../models/User';
-import { addUserImage, favorite } from '../../models/Post';
+import { addUser, favorite } from '../../models/Post';
 import { useParams } from 'react-router-dom';
 
 import './index.scss';
@@ -25,12 +25,15 @@ const User = () => {
     getPosts(username, {
       onError: Alert.error,
       onFound: posts => {
-        const postsWithUser = posts.map(post => addUserImage(post, user.image));
+        const postsWithUser = posts.map(post => addUser(post, {
+          image: user.image,
+          username: user.username
+        }));
 
         setPosts(postsWithUser);
       }
     });
-  }, [username, user.image]);
+  }, [username, user.image, user.username]);
 
   const followUser = () => {
     follow(user.id, {

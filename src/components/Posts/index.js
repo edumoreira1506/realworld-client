@@ -13,7 +13,7 @@ const Posts = ({ posts, onFavorite }) => (
           content={post.content}
           favoritesAmount={post.favorites.length}
           createdAt={post.createdAt}
-          userImage={post.userImage}
+          user={post.user}
           onFavorite={() => onFavorite(post._id)}
         />
       )

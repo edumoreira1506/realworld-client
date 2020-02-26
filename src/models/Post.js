@@ -23,7 +23,7 @@ export const favorite = async (postId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
-export const addUserImage = (post, userImage) => ({
+export const addUser = (post, user) => ({
   ...post,
-  userImage
+  user
 });
