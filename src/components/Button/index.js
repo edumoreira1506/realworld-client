@@ -3,7 +3,7 @@ import React from 'react';
 import './index.scss';
 
 const Button = ({
-  type,
+  type = 'button',
   onClick,
   children
 }) => (

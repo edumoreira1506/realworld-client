@@ -1,4 +1,5 @@
 import * as UserService from '../services/UserService';
+import { formatFromArray } from '../helpers/time';
 
 export const isAuthenticated = () => Boolean(getToken());
 
@@ -52,6 +53,18 @@ export const find = async (userId, callback) => {
 
   if (apiResponse.ok) {
     return callback.onFound(apiResponse.user);
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
+export const getPosts = async (userId, callback) => {
+  const apiResponse = await UserService.getPosts(userId);
+
+  if (apiResponse.ok) {
+    const posts = formatFromArray(apiResponse.posts);
+
+    return callback.onFound(posts);
   }
 
   return callback.onError(apiResponse.message);

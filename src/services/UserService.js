@@ -41,3 +41,9 @@ export const edit = async (user, userId, token) => {
 
   return data;
 }
+
+export const getPosts = async (userId) => {
+  const { data } = await api.get(`user/${userId}/posts`);
+
+  return data;
+}
