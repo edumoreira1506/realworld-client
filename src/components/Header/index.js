@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '../Link';
 import Container from '../Container';
 import * as User from '../../models/User';
-import { privateLinks, publicLinks } from '../../config/constants';
+import { privateLinks, publicLinks, baseUrl } from '../../config/constants';
 
 import './index.scss';
 
@@ -12,9 +12,11 @@ const Header = () => (
   <header className="Header">
     <Container>
       <div className="Header__areas">
-        <div className="Header__logo">
-          <h1 className="Header__title">RealWorld</h1>
-        </div>
+        <Link to={baseUrl} target="_self">
+          <div className="Header__logo">
+            <h1 className="Header__title">RealWorld</h1>
+          </div>
+        </Link>
         <nav className="Header__links">
           {
             links.map(link =>
