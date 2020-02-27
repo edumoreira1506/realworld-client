@@ -58,6 +58,17 @@ export const find = async (userId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
+export const getTimeLine = async (callback) => {
+  const userId = getId();
+  const apiResponse = await UserService.timeLine(userId);
+
+  if (apiResponse.ok) {
+    return callback.onFound(apiResponse.posts);
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
 export const getPosts = async (userId, callback) => {
   const apiResponse = await UserService.getPosts(userId);
 

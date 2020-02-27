@@ -31,6 +31,12 @@ export const follow = async (userId, token) => {
   return data;
 }
 
+export const timeLine = async (userId) => {
+  const { data } = await api.get(`user/${userId}/time_line`);
+
+  return data;
+}
+
 export const edit = async (user, userId, token) => {
   const config = {
     headers: {
