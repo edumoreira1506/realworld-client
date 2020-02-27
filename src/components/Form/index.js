@@ -9,7 +9,7 @@ const Form = ({ inputs = [], buttonText, onSubmit, textAreas = [] }) => (
   <form className="Form" onSubmit={onSubmit} data-testid="form">
     {
       inputs.map(input =>
-        <div className="Form__field" key={input.name}>
+        <div className="Form__field" key={input.placeholder}>
           <Input
             value={input.value}
             placeholder={input.placeholder}
@@ -23,7 +23,7 @@ const Form = ({ inputs = [], buttonText, onSubmit, textAreas = [] }) => (
     }
     {
       textAreas.map(textArea =>
-        <div className="Form__field" key={textArea.name}>
+        <div className="Form__field" key={textArea.placeholder}>
           <TextArea
             value={textArea.value}
             placeholder={textArea.placeholder}
