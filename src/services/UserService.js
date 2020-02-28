@@ -59,3 +59,9 @@ export const getFavoritePosts = async (userId) => {
 
   return data;
 }
+
+export const search = async (keyWord) => {
+  const { data } = await api.get(`user?keyWord=${keyWord}`);
+
+  return data;
+}

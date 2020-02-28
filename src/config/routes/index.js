@@ -12,6 +12,7 @@ import Logout from '../../pages/Logout';
 import User from '../../pages/User';
 import Post from '../../pages/Post';
 import NotFound from '../../pages/NotFound';
+import SearchUsers from '../../pages/SearchUsers';
 
 const Routes = () => (
   <HashRouter>
@@ -27,6 +28,7 @@ const Routes = () => (
 
       <Route exact path="/user/:username" component={User} />
       <Route exact path="/post/:postId" component={Post} />
+      <Route exact path="/search_users" component={SearchUsers} />
       <Route component={NotFound} />
     </Switch>
   </HashRouter>

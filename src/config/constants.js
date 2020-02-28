@@ -13,13 +13,18 @@ export const routes = {
   EDIT: `${baseUrl}/edit_profile`,
   EDIT_PASSWORD: `${baseUrl}/edit_password`,
   LOGOUT: `${baseUrl}/logout`,
-  MY_PROFILE: `${baseUrl}/user/${window.localStorage.getItem('username')}`
+  MY_PROFILE: `${baseUrl}/user/${window.localStorage.getItem('username')}`,
+  SEARCH_USERS: `${baseUrl}/search_users`
 }
 
 export const privateLinks = [
   {
     content: 'Time Line',
     to: routes.TIME_LINE
+  },
+  {
+    content: 'Search Users',
+    to: routes.SEARCH_USERS
   },
   {
     content: 'Edit',
@@ -36,6 +41,10 @@ export const privateLinks = [
 ];
 
 export const publicLinks = [
+  {
+    content: 'Search Users',
+    to: routes.SEARCH_USERS
+  },
   {
     content: 'Register',
     to: routes.REGISTER

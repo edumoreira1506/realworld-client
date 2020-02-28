@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+
+.SearchUsers {
+  width: 100%;
+  height: auto;
+
+  &__header {
+    height: 8vh;
+  }
+
+  &__users {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__user {
+    width: 30%;
+    margin: 0 20px 15px 20px;
+  }
+}

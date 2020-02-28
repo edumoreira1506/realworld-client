@@ -65,6 +65,12 @@ export const find = async (userId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
+export const search = async (keyWord, callback) => {
+  const apiResponse = await UserService.search(keyWord);
+
+  return callback.onFound(apiResponse.user);
+}
+
 export const getTimeLine = async (callback) => {
   const userId = getId();
   const apiResponse = await UserService.timeLine(userId);
