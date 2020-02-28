@@ -11,16 +11,21 @@ export const getId = () => window.localStorage.getItem('id');
 
 export const getUsername = () => window.localStorage.getItem('username');
 
+export const getImage = () => window.localStorage.getItem('image');
+
 const setToken = token => window.localStorage.setItem('token', token);
 
 const setUsername = username => window.localStorage.setItem('username', username);
 
 const setId = id => window.localStorage.setItem('id', id);
 
+const setImage = image => window.localStorage.setItem('image', image);
+
 export const authenticate = user => {
   setToken(user.token);
   setId(user._id);
   setUsername(user.username);
+  setImage(user.image);
 
   window.location.reload();
 }

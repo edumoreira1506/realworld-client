@@ -24,6 +24,17 @@ export const favorite = async (postId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
+export const comment = async (postId, content, callback) => {
+  const token = User.getToken();
+  const apiResponse = await PostService.comment(content, postId, token);
+
+  if (apiResponse.ok) {
+    return callback.onCommented();
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
 export const find = async (postId, callback) => {
   const apiResponse = await PostService.find(postId);
 
@@ -33,6 +44,22 @@ export const find = async (postId, callback) => {
       createdAt: format(apiResponse.post.createdAt),
       updatedAt: format(apiResponse.post.updatedAt)
     });
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
+export const findComments = async (postId, callback) => {
+  const apiResponse = await PostService.findComments(postId);
+
+  if (apiResponse.ok) {
+    const formatedComments = apiResponse.comments.map(comment => ({
+      ...comment,
+      createdAt: format(comment.createdAt),
+      updatedAt: format(comment.updatedAt)
+    }));
+
+    return callback.onFound(formatedComments);
   }
 
   return callback.onError(apiResponse.message);

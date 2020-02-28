@@ -1,26 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import { useParams } from 'react-router-dom';
-import { find } from '../../models/Post';
+import * as Post from '../../models/Post';
 import * as Alert from '../../helpers/alert';
 import Banner from '../../components/Banner';
 import Container from '../../components/Container';
 import Link from '../../components/Link';
+import Comments from '../../components/Comments';
+import Form from '../../components/Form';
 import { baseUrl } from '../../config/constants';
 import Markdown from 'markdown-to-jsx';
+import { getUsername, getImage } from '../../models/User';
+import { format } from '../../helpers/time';
 
 import './index.scss';
 
 const PostPage = () => {
   const [ post, setPost ] = useState({ user: {}, content: '' });
+  const [ comments, setComments ] = useState([]);
+  const [ comment, setComment ] = useState('');
   const { postId } = useParams();
 
   useEffect(() => {
-    find(postId, {
+    Post.find(postId, {
       onFound: setPost,
       onError: Alert.error
-    })
-  }, [postId])
+    });
+
+    Post.findComments(postId, {
+      onFound: setComments,
+      onError: Alert.error
+    });
+  }, [postId]);
+
+  const onComment = e => {
+    e.preventDefault();
+
+    Post.comment(postId, comment, {
+      onCommented: () => {
+        setComments(prevComments => [{
+          content: comment,
+          createdAt: format(),
+          user: {
+            username: getUsername(),
+            image: getImage()
+          }
+        }, ...prevComments]);
+
+        setComment('');
+      },
+      onError: Alert.error
+    });
+  }
+
+  const textAreas = [
+    {
+      onChange: e => setComment(e.target.value),
+      required: true,
+      placeholder: 'Comment here',
+      value: comment
+    }
+  ];
 
   return (
     <div className="PostPage">
@@ -57,6 +97,20 @@ const PostPage = () => {
             { post.content }
           </Markdown>
         </article>
+        <section className="PostPage__comments-area">
+          <div className="PostPage__comment-form">
+            <Form
+              onSubmit={onComment}
+              buttonText="Comment"
+              textAreas={textAreas}
+            />
+          </div>
+          <div className="PostPage__comments">
+            <Comments
+              comments={comments}
+            />
+          </div>
+        </section>
       </Container>
     </div>
   );
