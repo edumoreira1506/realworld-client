@@ -17,12 +17,12 @@ const Routes = () => (
     <PrivateRoute exact path='/time_line' component={TimeLine} />
     <PrivateRoute exact path='/edit_profile' component={EditProfile} />
     <PrivateRoute exact path='/edit_password' component={EditPassword} />
-    <PrivateRoute exact path='/logout' component={Logout} />
-    
+
     <PublicRoute exact path='/login' component={Login} />
     <PublicRoute exact path='/' component={Login} />
     <PublicRoute exact path='/register' component={Register} />
 
+    <Route exact path='/logout' component={Logout} />
     <Route exact path="/user/:username" component={User} />
     <Route exact path="/post/:postId" component={Post} />
   </HashRouter>
