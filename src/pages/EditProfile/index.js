@@ -91,7 +91,7 @@ const EditProfile = () => {
         <div className="EditProfile__areas">
           <Form
             onSubmit={onSubmit}
-            buttonText="EditP rofile"
+            buttonText="Edit Profile"
             inputs={inputs}
             textAreas={textAreas}
           />
