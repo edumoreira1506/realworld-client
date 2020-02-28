@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { isAuthenticated } from '../../models/User';
+import { isAuthenticated, redirectTo } from '../../models/User';
 import { routes } from '../constants';
 import { withPrivateTemplate } from '../../helpers/template';
 
@@ -14,7 +14,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         authenticated ? (
           withPrivateTemplate(<Component { ...props} />)
         ) : (
-          window.location = routes.LOGIN
+          redirectTo(routes.LOGIN)
         )
       )} 
     />

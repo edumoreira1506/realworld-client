@@ -1,6 +1,8 @@
 import * as UserService from '../services/UserService';
 import { formatFromArray } from '../helpers/time';
 
+export const redirectTo = url => window.location = url;
+
 export const isAuthenticated = () => Boolean(getToken());
 
 export const getToken = () => window.localStorage.getItem('token');
