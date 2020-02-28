@@ -18,6 +18,10 @@ export const routes = {
 
 export const privateLinks = [
   {
+    content: 'Time Line',
+    to: routes.TIME_LINE
+  },
+  {
     content: 'Edit',
     to: routes.EDIT
   },
