@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/edumoreira1506/realworld-client.svg?branch=master)](https://travis-ci.com/edumoreira1506/realworld-client)
+
 This project was started with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Dependencies
