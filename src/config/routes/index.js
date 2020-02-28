@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -11,20 +11,24 @@ import EditPassword from '../../pages/EditPassword';
 import Logout from '../../pages/Logout';
 import User from '../../pages/User';
 import Post from '../../pages/Post';
+import NotFound from '../../pages/NotFound';
 
 const Routes = () => (
   <HashRouter>
-    <PrivateRoute exact path='/time_line' component={TimeLine} />
-    <PrivateRoute exact path='/edit_profile' component={EditProfile} />
-    <PrivateRoute exact path='/edit_password' component={EditPassword} />
-    <PrivateRoute exact path='/logout' component={Logout} />
+    <Switch>
+      <PrivateRoute exact path='/time_line' component={TimeLine} />
+      <PrivateRoute exact path='/edit_profile' component={EditProfile} />
+      <PrivateRoute exact path='/edit_password' component={EditPassword} />
+      <PrivateRoute exact path='/logout' component={Logout} />
 
-    <PublicRoute exact path='/login' component={Login} />
-    <PublicRoute exact path='/' component={Login} />
-    <PublicRoute exact path='/register' component={Register} />
+      <PublicRoute exact path='/login' component={Login} />
+      <PublicRoute exact path='/' component={Login} />
+      <PublicRoute exact path='/register' component={Register} />
 
-    <Route exact path="/user/:username" component={User} />
-    <Route exact path="/post/:postId" component={Post} />
+      <Route exact path="/user/:username" component={User} />
+      <Route exact path="/post/:postId" component={Post} />
+      <Route component={NotFound} />
+    </Switch>
   </HashRouter>
 );
 
