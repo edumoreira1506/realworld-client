@@ -1,8 +1,10 @@
 {
   "homepage": "https://edumoreira1506.github.io/realworld-client",
   "name": "realworld-client",
+  "repository": "git@github.com:edumoreira1506/realworld-client.git",
+  "author": "Eduardo Moreira <contato@eduardoem.com.br>",
+  "license": "MIT",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
