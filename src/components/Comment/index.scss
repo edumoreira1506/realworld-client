@@ -1,0 +1,55 @@
+@import "../../variables.scss";
+
+.Comment {
+  width: 90%;
+  height: auto;
+  border-radius: $border-radius;
+  border: solid 1px $silver;
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  font-family: $main-font;
+
+  &__content {
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    background: $grullo;
+    border-radius: $border-radius;
+    border: solid 1px $silver;
+    padding: 10px 0 0 0;
+  }
+
+  &__image-container {
+    margin: 0 0 0 20px;
+    width: 30px;
+    height: auto;
+  }
+
+  &__image {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &__username {
+    font-size: 20px;
+    margin: 0 15px;
+    font-weight: 100;
+    color: $gray;
+  }
+
+  &__created-at {
+    margin: 0;
+    font-size: 16px;
+    padding-top: 3px;
+    color: $black;
+  }
+}
