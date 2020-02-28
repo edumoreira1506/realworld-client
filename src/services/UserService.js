@@ -53,3 +53,9 @@ export const getPosts = async (userId) => {
 
   return data;
 }
+
+export const getFavoritePosts = async (userId) => {
+  const { data } = await api.get(`user/${userId}/posts_favorites`);
+
+  return data;
+}
