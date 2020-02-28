@@ -38,7 +38,4 @@ export const find = async (postId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
-export const addUser = (post, user) => ({
-  ...post,
-  user
-});
+export const hasPosts = posts => Boolean(Object.keys(posts).length);

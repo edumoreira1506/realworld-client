@@ -81,6 +81,18 @@ export const getPosts = async (userId, callback) => {
   return callback.onError(apiResponse.message);
 }
 
+export const getFavoritePosts = async (userId, callback) => {
+  const apiResponse = await UserService.getFavoritePosts(userId);
+
+  if (apiResponse.ok) {
+    const posts = formatFromArray(apiResponse.posts);
+
+    return callback.onFound(posts);
+  }
+
+  return callback.onError(apiResponse.message);
+}
+
 export const follow = async (userId, callback) => {
   const token = getToken() || '';
   const apiResponse = await UserService.follow(userId, token);

@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+
+.Tabs {
+  font-family: $main-font;
+
+  &__options {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 10px 0;
+    display: flex;
+    font-size: 20px;
+    border-bottom: solid 1px $silver;
+  }
+
+  &__tab {
+    margin: 0 15px 0 0;
+    transition: $transition;
+    opacity: 0.5;
+    cursor: pointer;
+    color: $black;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--active {
+      color: $gray;
+      opacity: 1;
+    }
+  }
+}
